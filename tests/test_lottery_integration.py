@@ -21,6 +21,6 @@ def test_can_pick_winner(lottery_contract):
     )
     fund_with_link(lottery_contract)
     lottery_contract.endLottery({"from": account})
-    time.sleep(2000)
+    time.sleep(180)
     assert lottery_contract.recentWinner() == account
     assert lottery_contract.balance() == 0

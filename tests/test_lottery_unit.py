@@ -15,10 +15,10 @@ def test_get_entrance_fee(lottery_contract):
         pytest.skip()
 
     # Act
-    # 2,000 eth / usd
+    # 2,000   eth / usd
     # usdEntryFee is 50
-    # 2000/1 == 50/x == 0.025
-    expected_entrance_fee = Web3.toWei(0.025, "ether")
+    # 2000/1 == 50/x == 0.025     2000/1 = 10 / x
+    expected_entrance_fee = Web3.toWei(0.005, "ether")
     entrance_fee = lottery_contract.getEntranceFee()
     # Assert
     assert expected_entrance_fee == entrance_fee
@@ -74,7 +74,8 @@ def test_can_pick_winner_correctly(lottery_contract):
     account = get_account()
     lottery_contract.startLottery({"from": account})
     lottery_contract.enter(
-        {"from": account, "value": lottery_contract.getEntranceFee()}
+        {"from": account,
+         "value": lottery_contract.getEntranceFee()}
     )
     lottery_contract.enter(
         {"from": get_account(index=1),
