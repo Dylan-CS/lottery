@@ -5,8 +5,6 @@ import "@chainlink/contracts/src/v0.6/interfaces/AggregatorV3Interface.sol";
 import "@chainlink/contracts/src/v0.6/VRFConsumerBase.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-// import "../node_modules/@OpenZeppelin/contracts/access/Ownable.sol";
-
 contract Lottery is VRFConsumerBase, Ownable {
     address payable[] public players;
     address payable public recentWinner;
@@ -56,7 +54,6 @@ contract Lottery is VRFConsumerBase, Ownable {
         // 50 * 10**18 / 2000          10 *10**18 / 152639000000 *10*10
         uint256 costToEnter = (usdEntryFee * 10**18) / adjustedPrice;
         return costToEnter;
-        // 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419
     }
 
     function startLottery() public onlyOwner {

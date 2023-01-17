@@ -6,12 +6,13 @@ compiler:
     remappings:
       - '@chainlink=smartcontractkit/chainlink-brownie-contracts@1.1.1'
       - '@openzeppelin=OpenZeppelin/openzeppelin-contracts@3.4.0'
-dotenv: .env
+dotenv:  .env
 networks:
   default: development
   development:
     keyhash: "0x2ed0feb3e7fd2022120aa84fab1945545a9f2ffc9076fd6156fa96eaff4c1311"
     # keyhash: "0x79d3d8832d904592c0bf9818b621522c988bb8b0c05cdc3b15aea1b6e8db0c15"
+    # 0.1 LINK
     fee: 100000000000000000
     verify: False
   goerli:
@@ -20,6 +21,7 @@ networks:
     link_token: "0x326C977E6efc84E512bB9C30f76E30c160eD06FB"
     keyhash: "0x0476f9a745b61ea5c0ab224d3a6e4c99f0b02fce4da01143a4f70aa80ae76e8a"
     # keyhash: "0x79d3d8832d904592c0bf9818b621522c988bb8b0c05cdc3b15aea1b6e8db0c15"
+        # 0.1 LINK
     fee: 100000000000000000
     verify: True
   mainnet-fork:
@@ -27,3 +29,5 @@ networks:
     verify: False
 wallets:
   from_key: ${PRIVATE_KEY}
+settings:
+  gas_limit: "100000000000"

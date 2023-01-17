@@ -8,7 +8,6 @@ from brownie import (
     Contract,
     interface,
 )
-from web3 import Web3
 
 FORKED_LOCAL_ENVIRONMENTS = ["mainnet-fork", "mainnet-fork-dev"]
 LOCAL_BLOCKCHAIN_ENVIRONMENTS = ["development", "ganache-local"]
@@ -79,7 +78,7 @@ def deploy_mocks(decimals=DECIMALS, initial_value=INITIAL_VALUE):
     print("Deployed!")
 
 
-def fund_with_link(contract_address,account=None, link_token=None, amount=100000000000000000):  # 0.1 link
+def fund_with_link(contract_address,account=None, link_token=None, amount=260000000000000000):  # 0.26 link
     account = account if account else get_account()                       
     link_token = link_token if link_token else get_contract("link_token")
     tx = link_token.transfer(contract_address, amount, {"from": account})

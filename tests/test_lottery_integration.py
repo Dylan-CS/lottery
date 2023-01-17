@@ -11,11 +11,13 @@ import pytest
 def test_can_pick_winner(lottery_contract):
     if network.show_active() in LOCAL_BLOCKCHAIN_ENVIRONMENTS:
         pytest.skip()
+        
     account = get_account()
     lottery_contract.startLottery({"from": account})
     lottery_contract.enter(
         {"from": account, "value": lottery_contract.getEntranceFee()}
     )
+
     lottery_contract.enter(
         {"from": account, "value": lottery_contract.getEntranceFee()}
     )

@@ -18,9 +18,15 @@ The Smart Contract can't get the winner of the lottery, still need testing and m
 
 1.16 
 1. local environment  test ,work successfully
+   successfully print the detailed data 
 2. local environment  try to deploy it in local environment.  Unsuccessful
 3. get 10 LINK  Link币是运行于ChainLink系统的原生代币，供应总量10亿枚。
 4. ChainLink是区块链中间件，它允许智能合同访问关键的离线资源，如数据提要、各种web API和传统的银行帐户支付。通过提供智能合同，确保对这些关键资源的访问，链环允许他们模拟真实的世界协议，这些协议需要外部的性能证明，并且需要支付广泛可用的支付方式，例如银行支付。换言之，与数据有关的行业，Chainlink都可以与之结合，所以有网友给Chainlink起了个外号“万能插头”。
+
+1.17 
+1. find the error,the time and the link limit
+2. add time to 180 and increase link fee to 0.26>0.25 link
+3. still error!!! （want to die!)  : (
 
  
 
